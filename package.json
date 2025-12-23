@@ -1,0 +1,45 @@
+{
+  "name": "zod-cast",
+  "version": "1.0.1",
+  "description": "Schema-driven, retry-on-fail, provider-agnostic bridge between Zod and LLMs.",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./stream": {
+      "types": "./dist/stream.d.ts",
+      "import": "./dist/stream.js",
+      "require": "./dist/stream.cjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "keywords": ["zod", "llm", "schema", "validation", "tunnel", "ai", "openai", "chatgpt"],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup src/index.ts src/stream.ts --format esm,cjs --dts --sourcemap --clean",
+    "dev": "tsup src/index.ts src/stream.ts --format esm,cjs --dts --sourcemap --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest",
+    "test:watch": "NODE_OPTIONS=--experimental-vm-modules jest --watch"
+  },
+  "peerDependencies": {
+    "zod": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.4.6",
+    "jest": "^30.2.0",
+    "ts-jest": "^29.4.6",
+    "tsup": "^8.3.6",
+    "typescript": "^5.6.3",
+    "zod": "^3.23.8"
+  }
+}

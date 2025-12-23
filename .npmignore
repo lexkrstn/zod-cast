@@ -1,0 +1,17 @@
+# Exclude source files and tests from npm package.
+src/
+__tests__/
+
+# Tooling configs that consumers don't need.
+tsconfig.json
+tsconfig.*.json
+tsup.config.ts
+jest.config.cjs
+
+# Helpers and workspace files.
+.github/
+.vscode/
+
+# Lockfile + node_modules are automatically ignored, but keep for clarity.
+package-lock.json
+node_modules/
